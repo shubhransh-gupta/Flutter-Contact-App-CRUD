@@ -1,8 +1,10 @@
 # myproject- Flutter Contact Application 
-
-A new Flutter project.
+A new Flutter project to demonstrate how to implement a Contacts List via contacts_service package and how to search within that list using name or number.
 
 ## Getting Started
+Name of the project is "myproject"
+supports ios, android, and web view.
+Needs user permission to read and cache contact using HIVE caching.
 
 This project is a starting point for a Flutter application.
 
