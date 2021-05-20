@@ -31,8 +31,8 @@ class ContactsViewModel extends ChangeNotifier {
   ContactState state;
   List<AppContact> _contacts = [];
 
-  ContactsViewModel() {
-    state = ContactLoadingState();
+  ContactsViewModel({ @required ContactState initialState}) {
+    this.state = state;
     _notify();
     fetchContacts();
   }

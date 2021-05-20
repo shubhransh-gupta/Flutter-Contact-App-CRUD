@@ -13,7 +13,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (BuildContext context) => ContactsViewModel(),
+      create: (BuildContext context) =>
+          ContactsViewModel(initialState: ContactLoadingState()),
       child: MaterialApp(
         title: 'Flutter Contact App',
         theme: ThemeData(
@@ -42,7 +43,7 @@ class _MyHomePageState extends State<MyHomePage> {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
       searchController.addListener(() {
-        if(searchController.text.isNotEmpty) {
+        if (searchController.text.isNotEmpty) {
           Provider.of<ContactsViewModel>(context, listen: false)
               .searchContact(searchController.text);
         }
@@ -63,8 +64,9 @@ class _MyHomePageState extends State<MyHomePage> {
         onPressed: () async {
           try {
             Contact contact = await ContactsService.openContactForm();
-            if(contact!=null){
-              Provider.of<ContactsViewModel>(context, listen: false).fetchContacts();
+            if (contact != null) {
+              Provider.of<ContactsViewModel>(context, listen: false)
+                  .fetchContacts();
             }
           } on FormOperationException catch (e) {
             switch (e.errorCode) {
