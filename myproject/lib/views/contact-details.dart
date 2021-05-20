@@ -25,7 +25,7 @@ class _ContactDetailsState extends State<ContactDetails> {
         },
        child: Text('Cancel'),
        );
-    Widget deleteButton= TextButton(
+    Widget deleteButton = TextButton(
       style: TextButton.styleFrom(
       primary: Colors.white,
       backgroundColor: Colors.red,
@@ -75,12 +75,6 @@ class _ContactDetailsState extends State<ContactDetails> {
         // the App.build method, and use it to set our appbar title.
         title: Text('Contact Details'),
       ),
-      /* floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
-       floatingActionButton : FloatingActionButton(                                                       
-                       onPressed: () {onActionUpdate(); },
-                       backgroundColor: Theme.of(context).primaryColor,
-                       child: Text("Update")
-                       ),*/ 
           body: SafeArea(                     
           child: Column(
           children: <Widget>[
